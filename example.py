@@ -1,14 +1,16 @@
 import json
 import os
-#from fastapi import FastAPI
-#from fastapi.responses import JSONResponse
 
 import requests
 from dotenv import dotenv_values
 
+# from fastapi import FastAPI
+# from fastapi.responses import JSONResponse
+
+
 config = dotenv_values(".env")  # config
 
-#app = FastAPI()
+# app = FastAPI()
 
 status = dict()
 
@@ -19,9 +21,14 @@ TELEGRAM_URL = f"{config['AUTOMAGICALLY_ROOT_URL']}telegram/bots/automagically_t
 
 def send_email():
 
-    response = requests.get(EMAIL_URL, headers={"api-key": config["AUTOMAGICALLY_API_KEY"]})
+    response = requests.get(
+        EMAIL_URL, headers={"api-key": config["AUTOMAGICALLY_API_KEY"]}
+    )
 
-    status["emails"] = {"content": str(response.content), "status_code": response.status_code}
+    status["emails"] = {
+        "content": str(response.content),
+        "status_code": response.status_code,
+    }
 
 
 def send_telegram_message():
@@ -29,22 +36,34 @@ def send_telegram_message():
     response = requests.post(
         TELEGRAM_URL,
         data="Hello world 👋".encode("utf-8"),
-        headers={"api-key": config["AUTOMAGICALLY_API_KEY"], "Content-type": "text/plain"},
+        headers={
+            "api-key": config["AUTOMAGICALLY_API_KEY"],
+            "Content-type": "text/plain",
+        },
     )
 
-    status["telegram"] = {"content": str(response.content), "status_code": response.status_code}
+    status["telegram"] = {
+        "content": str(response.content),
+        "status_code": response.status_code,
+    }
 
 
 def publish_event():
 
     response = requests.post(
         EVENTS_URL,
-        data=json.dumps({ "value": "Hello world from my app!", "metric": 42}),
-        params={ "event_name": "test"},
-        headers={"api-key": config["AUTOMAGICALLY_API_KEY"], "Content-type": "application/json"},
+        data=json.dumps({"value": "Hello world from my app!", "metric": 42}),
+        params={"event_name": "test"},
+        headers={
+            "api-key": config["AUTOMAGICALLY_API_KEY"],
+            "Content-type": "application/json",
+        },
     )
 
-    status["events"] = {"content": str(response.content), "status_code": response.status_code}
+    status["events"] = {
+        "content": str(response.content),
+        "status_code": response.status_code,
+    }
 
 
 # @app.get("/")
@@ -66,5 +85,4 @@ if __name__ == "__main__":
     publish_event()
 
     print(status)
-    #return JSONResponse(status_code=200, content=status)
-
+    # return JSONResponse(status_code=200, content=status)

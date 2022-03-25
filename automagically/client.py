@@ -1,8 +1,5 @@
 import json
 from enum import Enum
-from typing import Optional, Union
-
-import requests
 from exceptions import (
     AutomagicallyAuthenticationError,
     AutomagicallyError,
@@ -10,6 +7,9 @@ from exceptions import (
     AutomagicallyServicesTransactionLimitError,
     DeserializeException,
 )
+from typing import Optional, Union
+
+import requests
 from response import AutomagicallyResponse
 from services.emails import Email, EmailsServiceAPI
 from services.sms import Sms, SMSServiceAPI

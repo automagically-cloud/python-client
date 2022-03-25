@@ -1,7 +1,6 @@
-from fastapi import FastAPI, Response, status
-
 from automagically.client import Client
 from automagically.services.emails.helpers.email import Email
+from fastapi import FastAPI, Response, status
 
 app = FastAPI()
 

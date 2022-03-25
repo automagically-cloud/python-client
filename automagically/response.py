@@ -1,9 +1,8 @@
 import json
 from typing import Optional
 
-from requests.structures import CaseInsensitiveDict
-
 from automagically.automagically_exceptions import DeserializeException
+from requests.structures import CaseInsensitiveDict
 
 
 class AutomagicallyResponse(object):

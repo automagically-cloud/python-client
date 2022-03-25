@@ -1,8 +1,7 @@
 from typing import Iterator, Optional
 
-from requests import Response
-
 from automagically.automagically_response import AutomagicallyResponse, PageResponse
+from requests import Response
 
 
 class AutomagicallyServiceAPI:
