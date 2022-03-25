@@ -20,11 +20,9 @@ Automagically
 
 
 
-Automagically Client / SDK
+Automagically Client for accessing our API
 
-
-* Free software: MIT license
-* Documentation: https://automagically.readthedocs.io.
+Read our Documentation: https://automagically.readthedocs.io.
 
 
 Features
@@ -32,10 +30,3 @@ Features
 
 * TODO
 
-Credits
--------
-
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
-
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
