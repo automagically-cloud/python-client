@@ -1,4 +1,4 @@
-* Automagically version:
+* Version:
 * Python version:
 * Operating System:
 

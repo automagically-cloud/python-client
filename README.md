@@ -30,6 +30,12 @@ client = Client(AUTOMAGICALLY_API_KEY)
 
 ```
 
+You find more examples in the `/examples` folder.
+
+## Documentation
+
+WIP
+
 ## Get your API key
 
 Apply for early access at <https://automagically.cloud>.

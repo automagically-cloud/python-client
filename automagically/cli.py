@@ -1,16 +1,17 @@
 """Console script for automagically."""
-import sys
-import click
+
+import fire
 
 
-@click.command()
-def main(args=None):
-    """Console script for automagically."""
-    click.echo("Replace this message by putting your code into "
-               "automagically.cli.main")
-    click.echo("See click documentation at https://click.palletsprojects.com/")
-    return 0
+def help():
+    print("Automagically")
+    print("=" * len("automagically"))
+    print("Python SDK für Automagically")
+
+
+def main():
+    fire.Fire({"help": help})
 
 
 if __name__ == "__main__":
-    sys.exit(main())  # pragma: no cover
+    main()  # pragma: no cover

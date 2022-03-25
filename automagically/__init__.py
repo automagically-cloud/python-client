@@ -1,5 +1,5 @@
-"""Top-level package for Automagically."""
+"""Top-level package for Python Client."""
 
 __author__ = """Jens Neuhaus"""
-__email__ = 'jens@automagically.sh'
-__version__ = '0.1.1'
+__email__ = "hey@automagically.cloud"
+__version__ = "0.1.2"
