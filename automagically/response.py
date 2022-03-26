@@ -1,7 +1,8 @@
 import json
-from typing import Optional
+from typing import Any, Optional
 
-from automagically.automagically_exceptions import DeserializeException
+from automagically.exceptions import DeserializeException
+from loguru import logger
 from requests.structures import CaseInsensitiveDict
 
 
@@ -27,16 +28,43 @@ class AutomagicallyResponse(object):
 
     @property
     def json(self) -> Optional[dict]:
+        if self.status_code < 200 or self.status_code >= 400:
+            return None
+
         if self._json is not None:
             return self._json
 
         try:
             json_content = json.loads(self.content)
-        except ValueError as error:
-            raise DeserializeException(self.content) from error
+        except ValueError:
+            return self.content
         self._json = json_content
 
         return self._json
+
+    @property
+    def data_id(self) -> str:
+        try:
+            return self.content.text["data_id"]
+        except Exception:
+            logger.error("Response does not contain a data_id")
+            return None
+
+    @property
+    def management_url(self) -> str:
+        try:
+            return self.content.text["management_url"]
+        except Exception:
+            logger.error("Response does not contain a management_url")
+            return None
+
+    @property
+    def resource_url(self) -> str:
+        try:
+            return self.content.text["resource_url"]
+        except Exception:
+            logger.error("Response does not contain a resource_url")
+            return None
 
 
 class PageResponse(AutomagicallyResponse):

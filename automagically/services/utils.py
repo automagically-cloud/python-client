@@ -1,6 +1,6 @@
-from typing import Iterator, Optional
+from typing import Any, Iterator, Optional
 
-from automagically.automagically_response import AutomagicallyResponse, PageResponse
+from automagically.response import AutomagicallyResponse, PageResponse
 from requests import Response
 
 
