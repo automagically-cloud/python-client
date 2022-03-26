@@ -9,8 +9,13 @@ def help():
     print("Python SDK für Automagically")
 
 
+def version():
+    print("Version: 0.1.3")
+
+
 def main():
     fire.Fire({"help": help})
+    fire.Fire({"version": version})
 
 
 if __name__ == "__main__":
