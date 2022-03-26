@@ -14,8 +14,7 @@ def version():
 
 
 def main():
-    fire.Fire({"help": help})
-    fire.Fire({"version": version})
+    fire.Fire({"help": help, "version": version})
 
 
 if __name__ == "__main__":

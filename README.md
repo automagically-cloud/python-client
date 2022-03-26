@@ -25,7 +25,7 @@ export AUTOMAGICALLY_API_KEY=....
 from automagically import Client
 from automagically.types import Email
 
-
+# We are reading the Environment variable AUTOMAGICALLY_API_KEY
 automagically = Client(logging=True)
 
 
@@ -40,7 +40,11 @@ if __name__ == "__main__":
 
     automagically.send_email(email)
     automagically.send_telegram_message("Hello from example app 👋")
-    automagically.publish_event("test", {"value": "Hello from example app 👋", "sense_of_life": 42})
+
+    automagically.publish_event("test_event", {
+        "value": "Hello from example app 👋",
+        "sense_of_life": 42
+    })
 
 ```
 

@@ -12,6 +12,8 @@
 * Sending to a Telegram chat: `client.send_telegram_message(message)` can send a Telegram message
 * Publishing an event: `client.publish_event(event_name, dict)` can publish an event
 
-## 0.1.3 (2022-03-31)
+## 0.1.3 (2022-03-26)
 
-*
+* BUGFIX: Installation of `requests` was missing
+* BUGFIX: Removed unnecessary installation of `mkdocs-material-extensions`
+* Improved README example
